@@ -1,23 +1,36 @@
-"use client"
-// In a real app, you would import from '@orga-ai/react'
-import { OrgaAI, OrgaAIProvider } from "@/lib/orga-ai-mock"
-import type React from "react"
+"use client";
+import { OrgaAI, OrgaAIProvider } from "@orga-ai/react";
+import type React from "react";
+import { useEffect, useRef } from "react";
 
-// Initialize Orga once near startup
-// The documentation calls for this specific initialization pattern
-OrgaAI.init({
-  logLevel: "debug",
-  fetchSessionConfig: async () => {
-    const res = await fetch("/api/orga-client-secrets")
-    if (!res.ok) {
-      throw new Error("Failed to fetch session config")
+// Variable global para asegurar una sola inicialización
+let isOrgaInitialized = false;
+
+export function OrgaClientProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const initRef = useRef(false);
+
+  useEffect(() => {
+    // Solo inicializar una vez, incluso con React StrictMode
+    if (!isOrgaInitialized && !initRef.current) {
+      console.log("🚀 Inicializando OrgaAI...");
+
+      OrgaAI.init({
+        logLevel: "debug",
+        sessionConfigEndpoint: "/api/orga-client-secrets",
+        model: "orga-1-beta",
+        voice: "alloy",
+      });
+
+      isOrgaInitialized = true;
+      initRef.current = true;
+
+      console.log("✅ OrgaAI inicializado correctamente");
     }
-    return await res.json() // { ephemeralToken, iceServers }
-  },
-  model: "orga-1-beta",
-  voice: "alloy",
-})
+  }, []);
 
-export function OrgaClientProvider({ children }: { children: React.ReactNode }) {
-  return <OrgaAIProvider>{children}</OrgaAIProvider>
+  return <OrgaAIProvider>{children}</OrgaAIProvider>;
 }
