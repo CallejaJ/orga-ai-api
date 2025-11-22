@@ -1,34 +1,25 @@
+// app/providers/OrgaClientProvider.tsx
 "use client";
 import { OrgaAI, OrgaAIProvider } from "@orga-ai/react";
 import type React from "react";
 import { useEffect, useRef } from "react";
-
-// Variable global para asegurar una sola inicialización
-let isOrgaInitialized = false;
 
 export function OrgaClientProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const initRef = useRef(false);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    // Solo inicializar una vez, incluso con React StrictMode
-    if (!isOrgaInitialized && !initRef.current) {
-      console.log("🚀 Inicializando OrgaAI...");
-
+    if (!initialized.current && typeof window !== "undefined") {
       OrgaAI.init({
-        logLevel: "debug",
+        logLevel: "info",
         sessionConfigEndpoint: "/api/orga-client-secrets",
         model: "orga-1-beta",
         voice: "alloy",
       });
-
-      isOrgaInitialized = true;
-      initRef.current = true;
-
-      console.log("✅ OrgaAI inicializado correctamente");
+      initialized.current = true;
     }
   }, []);
 
