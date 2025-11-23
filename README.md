@@ -1,4 +1,4 @@
-# ACOMPAÑA2 - Tu Compañía Virtual
+# TUVOZAMIGA - Tu Compañía Virtual
 
 Una aplicación diseñada para combatir la soledad, proporcionando una voz amiga y escucha activa potenciada por IA.
 

@@ -24,12 +24,12 @@ export default function Header() {
           {/* Badge */}
           <div className="inline-flex items-center rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-300 backdrop-blur-xl mb-6">
             <span className="flex h-2 w-2 rounded-full bg-indigo-400 mr-2 animate-pulse"></span>
-            ACOMPAÑA2 Beta
+            TUVOZAMIGA Beta
           </div>
 
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400 px-2">
-            ACOMPAÑA2
+            TUVOZAMIGA
           </h1>
 
           {/* Description */}
