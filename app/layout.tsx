@@ -49,17 +49,17 @@ export const metadata: Metadata = {
         rel: "icon",
         type: "image/png",
         sizes: "192x192",
-        url: "/android-chrome-192x192.png",
+        url: "/favicon/android-chrome-192x192.png",
       },
       {
         rel: "icon",
         type: "image/png",
         sizes: "512x512",
-        url: "/android-chrome-512x512.png",
+        url: "/favicon/android-chrome-512x512.png",
       },
     ],
   },
-  manifest: "/site.webmanifest",
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
     title: "Orga AI - Next-Gen AI Interfaces",
     description:
