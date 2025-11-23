@@ -29,13 +29,13 @@ export default function Header() {
 
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400">
-            Next-Gen AI Interfaces
+            Interfaces de IA de Próxima Generación
           </h1>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-            Experience the future of human-computer interaction with real-time
-            video and audio processing, powered by Orga AI.
+            Experimenta el futuro de la interacción humano-computadora con procesamiento
+            de video y audio en tiempo real, impulsado por Orga AI.
           </p>
 
           {/* CTA Buttons */}
@@ -44,7 +44,7 @@ export default function Header() {
               href="#demo"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all"
             >
-              Try the Demo
+              Probar Demo
             </a>
             <a
               href="https://docs.orga.ai"
@@ -52,7 +52,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-800/50 px-8 py-3 text-sm font-semibold text-white hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition-all backdrop-blur-sm"
             >
-              View Documentation
+              Ver Documentación
             </a>
           </div>
         </div>

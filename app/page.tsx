@@ -19,11 +19,11 @@ export default function Home() {
                 <Zap className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Real-time Latency
+                Latencia en Tiempo Real
               </h3>
               <p className="text-slate-600">
-                Optimized for ultra-low latency communication, ensuring natural
-                and fluid conversations.
+                Optimizado para comunicación de latencia ultra baja, asegurando conversaciones
+                naturales y fluidas.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
@@ -31,11 +31,11 @@ export default function Home() {
                 <Shield className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Secure & Private
+                Seguro y Privado
               </h3>
               <p className="text-slate-600">
-                End-to-end encryption for all streams. Your data remains yours
-                and is never stored.
+                Encriptación de extremo a extremo para todos los flujos. Tus datos permanecen tuyos
+                y nunca se almacenan.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
@@ -43,11 +43,11 @@ export default function Home() {
                 <Globe className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">
-                Edge Deployed
+                Desplegado en el Borde
               </h3>
               <p className="text-slate-600">
-                Running on global edge networks to bring AI processing closer to
-                your users.
+                Ejecutándose en redes globales de borde para acercar el procesamiento de IA a
+                tus usuarios.
               </p>
             </div>
           </div>
@@ -59,11 +59,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Interactive Demo
+              Demo Interactiva
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Test the integration directly in your browser. No installation
-              required.
+              Prueba la integración directamente en tu navegador. No se requiere instalación.
             </p>
           </div>
 
@@ -111,7 +110,7 @@ function DemoComponent() {
               }`}
             />
             <span className="font-medium text-slate-700 capitalize">
-              Status: {connectionState}
+              Estado: {connectionState}
             </span>
           </div>
 
@@ -122,7 +121,7 @@ function DemoComponent() {
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-sm"
             >
               <Play className="h-4 w-4 mr-2" />
-              Start Session
+              Iniciar Sesión
             </button>
             <button
               onClick={() => endSession()}
@@ -130,7 +129,7 @@ function DemoComponent() {
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-red-50 text-red-600 font-medium hover:bg-red-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors border border-red-200"
             >
               <Square className="h-4 w-4 mr-2 fill-current" />
-              End Session
+              Terminar Sesión
             </button>
           </div>
         </div>
@@ -145,17 +144,25 @@ function DemoComponent() {
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
               <div className="bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">
                 <p className="text-white/80 text-sm flex items-center gap-2">
-                  <Mic2 className="h-4 w-4" /> Connected - Speak naturally
+                  <Mic2 className="h-4 w-4" /> Conectado - Habla naturalmente
                 </p>
               </div>
             </div>
           )}
 
+        {connectionState === "connected" && !isMicOn && (
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50">
+            <div className="bg-yellow-500 text-white px-4 py-2 rounded-full shadow-lg text-sm font-medium">
+              Por favor active el micrófono para continuar
+            </div>
+          </div>
+        )}
+
           {!userVideoStream && connectionState !== "connected" && (
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-slate-400">
-                <p className="text-lg mb-2">Click "Start Session" to begin</p>
-                <p className="text-sm">Microphone access required</p>
+                <p className="text-lg mb-2">Haz clic en "Iniciar Sesión" para comenzar</p>
+                <p className="text-sm">Se requiere acceso al micrófono</p>
               </div>
             </div>
           )}
@@ -171,7 +178,7 @@ function DemoComponent() {
                   : "bg-slate-100 text-slate-600 border-2 border-slate-200"
               }`}
             >
-              {isCameraOn ? "📹 Camera On" : "📷 Camera Off"}
+              {isCameraOn ? "📹 Cámara Encendida" : "📷 Cámara Apagada"}
             </button>
             <button
               onClick={toggleMic}
@@ -181,7 +188,7 @@ function DemoComponent() {
                   : "bg-slate-100 text-slate-600 border-2 border-slate-200"
               }`}
             >
-              {isMicOn ? "🎤 Mic On" : "🔇 Mic Off"}
+              {isMicOn ? "🎤 Micrófono Encendido" : "🔇 Micrófono Apagado"}
             </button>
           </div>
         )}
@@ -189,13 +196,13 @@ function DemoComponent() {
         <div className="grid grid-cols-2 gap-4">
           <div className="p-4 rounded-lg bg-slate-50 border border-slate-100">
             <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
-              AI Model
+              Modelo de IA
             </h4>
             <p className="text-slate-900 font-medium">orga-1-beta</p>
           </div>
           <div className="p-4 rounded-lg bg-slate-50 border border-slate-100">
             <h4 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">
-              Voice
+              Voz
             </h4>
             <p className="text-slate-900 font-medium">Alloy</p>
           </div>
