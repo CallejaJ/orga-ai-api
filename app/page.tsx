@@ -213,13 +213,13 @@ function DemoComponent() {
           )}
 
           {connectionState === "connected" && !isMicOn && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[90%]">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[85%] sm:max-w-md">
               <div className="flex items-center gap-3 bg-slate-900/90 text-white px-6 py-3 rounded-full shadow-lg border border-white/10 backdrop-blur-md animate-in fade-in slide-in-from-bottom-4 duration-300">
-                <div className="relative flex h-3 w-3">
+                <div className="relative flex h-3 w-3 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
                 </div>
-                <span className="text-sm font-medium whitespace-nowrap">
+                <span className="text-sm font-medium text-center">
                   Por favor active el micrófono para continuar
                 </span>
               </div>
