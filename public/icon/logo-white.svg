@@ -1,0 +1,16 @@
+<svg width="1500" height="400" viewBox="0 0 1500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo icon -->
+  <g transform="translate(280, 100)">
+    <!-- Rounded square border -->
+    <rect x="0" y="0" width="200" height="200" rx="30" stroke="white" stroke-width="15" fill="none"/>
+    
+    <!-- Four leaves pattern -->
+    <path d="M100 100 Q50 50, 50 100 Q50 50, 100 50 Z" fill="white"/>
+    <path d="M100 100 Q150 50, 150 100 Q150 50, 100 50 Z" fill="white"/>
+    <path d="M100 100 Q50 150, 50 100 Q50 150, 100 150 Z" fill="white"/>
+    <path d="M100 100 Q150 150, 150 100 Q150 150, 100 150 Z" fill="white"/>
+  </g>
+  
+  <!-- Text "orga AI" -->
+  <text x="550" y="245" font-family="Arial, sans-serif" font-size="120" font-weight="600" fill="white">orga AI</text>
+</svg>
