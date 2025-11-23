@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { OrgaClientProvider } from "./providers/OrgaClientProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const geist = Geist({ subsets: ["latin"] });
 const geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -87,6 +88,7 @@ export default function RootLayout({
       <body className={`${geist.className} antialiased`}>
         <OrgaClientProvider>{children}</OrgaClientProvider>
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );

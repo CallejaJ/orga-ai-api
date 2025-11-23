@@ -1,6 +1,7 @@
 "use client";
 import { useOrgaAI, OrgaVideo, OrgaAudio } from "@orga-ai/react";
 import { Zap, Shield, Globe, Play, Square, Mic2 } from "lucide-react";
+import { toast } from "sonner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -95,6 +96,17 @@ function DemoComponent() {
     connectionState === "disconnected" || connectionState === "closed";
   const canEnd = connectionState === "connected";
 
+  const handleToggleCamera = async () => {
+    try {
+      await toggleCamera();
+    } catch (error) {
+      console.error("Error toggling camera:", error);
+      toast.error(
+        "No se pudo acceder a la cámara. Por favor verifica los permisos del navegador."
+      );
+    }
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
       <div className="p-6 md:p-8">
@@ -171,7 +183,7 @@ function DemoComponent() {
         {connectionState === "connected" && (
           <div className="grid grid-cols-2 gap-4 mb-6">
             <button
-              onClick={toggleCamera}
+              onClick={handleToggleCamera}
               className={`p-4 rounded-lg font-medium transition-colors ${
                 isCameraOn
                   ? "bg-indigo-100 text-indigo-700 border-2 border-indigo-300"
