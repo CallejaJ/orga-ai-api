@@ -5,9 +5,9 @@ A Next.js application showcasing real-time AI video and audio processing capabil
 ## 🚀 Features
 
 - **Real-time Video & Audio Processing**: Experience seamless AI interactions with ultra-low latency
-- **Live Camera & Microphone Controls**: Toggle camera and microphone during active sessions
+- **Live Microphone Controls**: Toggle microphone during active sessions
 - **Connection State Management**: Visual feedback for connection status (disconnected, connecting, connected)
-- **Modern UI/UX**: Beautiful, responsive interface built with Tailwind CSS
+- **Modern UI/UX**: Beautiful, responsive interface built with Tailwind CSS, fully translated to Spanish
 - **Edge Deployment Ready**: Optimized for global edge networks
 
 ## 📦 Tech Stack
@@ -108,7 +108,6 @@ The `useOrgaAI()` hook provides:
 - `connectionState` - Current connection status
 - `userVideoStream` - User's video MediaStream
 - `aiAudioStream` - AI audio MediaStream
-- `toggleCamera()` - Enable/disable camera
 - `toggleMic()` - Enable/disable microphone
 
 ## 🎨 UI Components
@@ -138,12 +137,12 @@ The interface includes:
 1. Push your code to GitHub
 2. Import project in Vercel Dashboard
 3. Configure environment variables
-4. Set Node.js version to 18.x (recommended)
+4. Set Node.js version to 22.x (recommended)
 5. Deploy
 
 ### Configuration Notes
 
-- Node.js version: 18.x or 20.x recommended
+- Node.js version: 22.x recommended
 - TypeScript errors are ignored in build (`ignoreBuildErrors: true`)
 - Images are unoptimized for faster builds
 
@@ -167,18 +166,18 @@ export async function GET() {
 
 1. **Starting a Session**
 
-   - Click "Start Session" button
-   - Allow camera and microphone access when prompted
+   - Click "Iniciar Sesión" button
+   - Allow microphone access when prompted
    - Wait for connection to establish (status indicator turns green)
 
 2. **During Session**
 
    - Speak naturally to interact with the AI
-   - Toggle camera/microphone as needed
+   - Toggle microphone as needed
    - Monitor connection status indicator
 
 3. **Ending Session**
-   - Click "End Session" to terminate
+   - Click "Terminar Sesión" to terminate
    - Resources are automatically cleaned up
 
 ## 🔐 Security Features
